@@ -3,17 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcases.nobrokertestcases">
+      <class name="nobrokerlogin.nobroker">
         <methods>
-          <include name="location"/>
-          <include name="openWebsite"/>
-          <include name="saveExcelChanges"/>
-          <include name="sortByOldestFirst"/>
           <include name="search"/>
-          <include name="getValues"/>
           <include name="sortbyrent"/>
+          <include name="closeBrowser"/>
+          <include name="getValues"/>
+          <include name="sortbyoldestfirst"/>
+          <include name="openwebsite"/>
+          <include name="location"/>
         </methods>
-      </class> <!-- testcases.nobrokertestcases -->
+      </class> <!-- nobrokerlogin.nobroker -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -19,13 +19,24 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
 public class nobroker {
 
 	static WebDriver driver;
 	XSSFWorkbook workbook;
+	ExtentReports extentReport;
+	ExtentSparkReporter	sparkreporter;
+	ExtentTest testcase;
 
 	@BeforeSuite
 	public void openwebsite() throws InterruptedException {
+		
+		extentReport = new ExtentReports();
+		sparkreporter = new ExtentSparkReporter("ExtentReport.html");
+		extentReport.attachReporter(sparkreporter);
 
 		System.setProperty("webdriver.chrome.driver", "E:\\chrome driver\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
@@ -38,6 +49,8 @@ public class nobroker {
 
 	@Test(priority = 0)
 	public void location() throws InterruptedException{
+		
+		testcase = extentReport.createTest("entering location");
 
 		WebElement locationDropdown = driver.findElement(By.xpath("(//div[@class='css-16pqwjk-indicatorContainer nb-select__indicator nb-select__dropdown-indicator'])[1]"));
 		locationDropdown.click();
@@ -74,6 +87,8 @@ public class nobroker {
 
 	@Test(dependsOnMethods = "location", priority = 1)
 	public void search() throws InterruptedException {
+		
+		testcase = extentReport.createTest("entering search type");
 
 		WebElement bhktype = driver.findElement(By.xpath("(//div[@class='css-16pqwjk-indicatorContainer nb-select__indicator nb-select__dropdown-indicator'])[2]"));
 		bhktype.click();
@@ -105,6 +120,8 @@ public class nobroker {
 
 	@Test(dependsOnMethods = "search", priority = 2)
 	public void getValues() throws InterruptedException {
+		
+		testcase = extentReport.createTest("search Results");
 
 		//print the first shown property
 
@@ -123,6 +140,8 @@ public class nobroker {
 	}
 	@Test(dependsOnMethods = "search", priority = 3) 
 	public void sortbyoldestfirst() throws InterruptedException {
+		
+		testcase = extentReport.createTest("oldest first");
 
 		// Sort By posted on oldest first in Drop down box
 		driver.findElement(By.xpath("//div[@class='css-1wy0on6 nb-select__indicators']")).click();
@@ -141,6 +160,8 @@ public class nobroker {
 
 	@Test(dependsOnMethods = "search", priority = 4) 
 	public void sortbyrent() throws InterruptedException {
+		
+		testcase = extentReport.createTest("sort by rent price");
 
 		// Sort By rent
 		WebElement drag = driver.findElement(By.xpath("//div[@class='rc-slider-handle rc-slider-handle-2']"));

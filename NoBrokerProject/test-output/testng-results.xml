@@ -1,45 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="0" failed="0" skipped="5">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-15T09:58:44 IST" name="Default suite" finished-at="2023-09-15T09:59:38 IST" duration-ms="53788">
+  <suite started-at="2023-09-21T15:56:14 IST" name="Default suite" finished-at="2023-09-21T15:56:14 IST" duration-ms="93">
     <groups>
     </groups>
-    <test started-at="2023-09-15T09:58:44 IST" name="Default test" finished-at="2023-09-15T09:59:38 IST" duration-ms="53788">
-      <class name="testcases.nobrokertestcases">
-        <test-method is-config="true" signature="openWebsite()[pri:0, instance:testcases.nobrokertestcases@8462f31]" started-at="2023-09-15T09:58:40 IST" name="openWebsite" finished-at="2023-09-15T09:58:44 IST" duration-ms="3972" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openWebsite -->
-        <test-method signature="location()[pri:0, instance:testcases.nobrokertestcases@8462f31]" started-at="2023-09-15T09:58:44 IST" name="location" finished-at="2023-09-15T09:59:05 IST" duration-ms="20677" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- location -->
-        <test-method signature="search()[pri:1, instance:testcases.nobrokertestcases@8462f31]" started-at="2023-09-15T09:59:05 IST" name="search" finished-at="2023-09-15T09:59:17 IST" depends-on-methods="testcases.nobrokertestcases.location" duration-ms="12108" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- search -->
-        <test-method signature="getValues()[pri:2, instance:testcases.nobrokertestcases@8462f31]" started-at="2023-09-15T09:59:17 IST" name="getValues" finished-at="2023-09-15T09:59:22 IST" depends-on-methods="testcases.nobrokertestcases.search" duration-ms="4811" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getValues -->
-        <test-method signature="sortByOldestFirst()[pri:3, instance:testcases.nobrokertestcases@8462f31]" started-at="2023-09-15T09:59:22 IST" name="sortByOldestFirst" finished-at="2023-09-15T09:59:30 IST" depends-on-methods="testcases.nobrokertestcases.search" duration-ms="8317" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sortByOldestFirst -->
-        <test-method signature="sortbyrent()[pri:4, instance:testcases.nobrokertestcases@8462f31]" started-at="2023-09-15T09:59:30 IST" name="sortbyrent" finished-at="2023-09-15T09:59:38 IST" depends-on-methods="testcases.nobrokertestcases.search" duration-ms="7781" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sortbyrent -->
-        <test-method is-config="true" signature="saveExcelChanges()[pri:0, instance:testcases.nobrokertestcases@8462f31]" started-at="2023-09-15T09:59:38 IST" name="saveExcelChanges" finished-at="2023-09-15T09:59:38 IST" duration-ms="7" status="FAIL">
-          <exception class="java.lang.NullPointerException">
+    <test started-at="2023-09-21T15:56:14 IST" name="Default test" finished-at="2023-09-21T15:56:14 IST" duration-ms="93">
+      <class name="nobrokerlogin.nobroker">
+        <test-method is-config="true" signature="openwebsite()[pri:0, instance:nobrokerlogin.nobroker@792b749c]" started-at="2023-09-21T15:56:14 IST" name="openwebsite" finished-at="2023-09-21T15:56:14 IST" duration-ms="117" status="FAIL">
+          <exception class="java.lang.NoClassDefFoundError">
             <message>
-              <![CDATA[Cannot invoke "org.apache.poi.xssf.usermodel.XSSFWorkbook.write(java.io.OutputStream)" because "pageobjects.ExcelUtils.workbook" is null]]>
+              <![CDATA[io/reactivex/rxjava3/subjects/PublishSubject]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.apache.poi.xssf.usermodel.XSSFWorkbook.write(java.io.OutputStream)" because "pageobjects.ExcelUtils.workbook" is null
-at pageobjects.ExcelUtils.saveExcelChanges(ExcelUtils.java:52)
-at testcases.nobrokertestcases.saveExcelChanges(nobrokertestcases.java:109)
+              <![CDATA[java.lang.NoClassDefFoundError: io/reactivex/rxjava3/subjects/PublishSubject
+at com.aventstack.extentreports.ReactiveSubject.<init>(ReactiveSubject.java:28)
+at com.aventstack.extentreports.AbstractProcessor.<init>(AbstractProcessor.java:19)
+at com.aventstack.extentreports.ExtentReports.<init>(ExtentReports.java:55)
+at nobrokerlogin.nobroker.openwebsite(nobroker.java:37)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -48,7 +26,87 @@ at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvoca
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
 at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
 at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:410)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: io.reactivex.rxjava3.subjects.PublishSubject
+at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+... 23 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NoClassDefFoundError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openwebsite -->
+        <test-method signature="location()[pri:0, instance:nobrokerlogin.nobroker@792b749c]" started-at="2023-09-21T15:56:14 IST" name="location" finished-at="2023-09-21T15:56:14 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NoClassDefFoundError">
+            <message>
+              <![CDATA[io/reactivex/rxjava3/subjects/PublishSubject]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NoClassDefFoundError: io/reactivex/rxjava3/subjects/PublishSubject
+at com.aventstack.extentreports.ReactiveSubject.<init>(ReactiveSubject.java:28)
+at com.aventstack.extentreports.AbstractProcessor.<init>(AbstractProcessor.java:19)
+at com.aventstack.extentreports.ExtentReports.<init>(ExtentReports.java:55)
+at nobrokerlogin.nobroker.openwebsite(nobroker.java:37)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: io.reactivex.rxjava3.subjects.PublishSubject
+at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+... 23 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NoClassDefFoundError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- location -->
+        <test-method signature="search()[pri:1, instance:nobrokerlogin.nobroker@792b749c]" started-at="2023-09-21T15:56:14 IST" name="search" finished-at="2023-09-21T15:56:14 IST" depends-on-methods="nobrokerlogin.nobroker.location" duration-ms="1" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method nobrokerlogin.nobroker.search() on instance nobrokerlogin.nobroker@792b749c depends on not successfully finished methods 
+[nobrokerlogin.nobroker.location() on instance nobrokerlogin.nobroker@792b749c]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method nobrokerlogin.nobroker.search() on instance nobrokerlogin.nobroker@792b749c depends on not successfully finished methods 
+[nobrokerlogin.nobroker.location() on instance nobrokerlogin.nobroker@792b749c]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:156)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
 at org.testng.SuiteRunner.run(SuiteRunner.java:336)
 at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -61,11 +119,117 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- saveExcelChanges -->
-      </class> <!-- testcases.nobrokertestcases -->
+        </test-method> <!-- search -->
+        <test-method signature="getValues()[pri:2, instance:nobrokerlogin.nobroker@792b749c]" started-at="2023-09-21T15:56:14 IST" name="getValues" finished-at="2023-09-21T15:56:14 IST" depends-on-methods="nobrokerlogin.nobroker.search" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method nobrokerlogin.nobroker.getValues() on instance nobrokerlogin.nobroker@792b749c depends on not successfully finished methods 
+[nobrokerlogin.nobroker.search() on instance nobrokerlogin.nobroker@792b749c]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method nobrokerlogin.nobroker.getValues() on instance nobrokerlogin.nobroker@792b749c depends on not successfully finished methods 
+[nobrokerlogin.nobroker.search() on instance nobrokerlogin.nobroker@792b749c]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:156)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getValues -->
+        <test-method signature="sortbyoldestfirst()[pri:3, instance:nobrokerlogin.nobroker@792b749c]" started-at="2023-09-21T15:56:14 IST" name="sortbyoldestfirst" finished-at="2023-09-21T15:56:14 IST" depends-on-methods="nobrokerlogin.nobroker.search" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method nobrokerlogin.nobroker.sortbyoldestfirst() on instance nobrokerlogin.nobroker@792b749c depends on not successfully finished methods 
+[nobrokerlogin.nobroker.search() on instance nobrokerlogin.nobroker@792b749c]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method nobrokerlogin.nobroker.sortbyoldestfirst() on instance nobrokerlogin.nobroker@792b749c depends on not successfully finished methods 
+[nobrokerlogin.nobroker.search() on instance nobrokerlogin.nobroker@792b749c]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:156)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sortbyoldestfirst -->
+        <test-method signature="sortbyrent()[pri:4, instance:nobrokerlogin.nobroker@792b749c]" started-at="2023-09-21T15:56:14 IST" name="sortbyrent" finished-at="2023-09-21T15:56:14 IST" depends-on-methods="nobrokerlogin.nobroker.search" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method nobrokerlogin.nobroker.sortbyrent() on instance nobrokerlogin.nobroker@792b749c depends on not successfully finished methods 
+[nobrokerlogin.nobroker.search() on instance nobrokerlogin.nobroker@792b749c]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method nobrokerlogin.nobroker.sortbyrent() on instance nobrokerlogin.nobroker@792b749c depends on not successfully finished methods 
+[nobrokerlogin.nobroker.search() on instance nobrokerlogin.nobroker@792b749c]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:156)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sortbyrent -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:nobrokerlogin.nobroker@792b749c]" started-at="2023-09-21T15:56:14 IST" name="closeBrowser" finished-at="2023-09-21T15:56:14 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- nobrokerlogin.nobroker -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
